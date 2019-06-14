@@ -10,13 +10,13 @@ import logo from './assets/logo.png'
 export default createAppContainer(
   createStackNavigator({
     Feed,
-    New,
+    New
   }, {
     initialRouteName: 'Feed',
     defaultNavigationOptions: {
       headerTintColor: '#000',
       headerTitle: <Image style={{ marginHorizontal: 20 }} source={logo} />,
-      headerBackTitke: null,
+      headerBackTitke: null
     },
     mode: 'modal'
   })

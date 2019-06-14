@@ -4,28 +4,32 @@ import api from '../services/api'
 import './New.css'
 
 class New extends Component {
-  state = {
-    image: null,
-    author: '',
-    place: '',
-    description: '',
-    hashtags: '',
+  constructor () {
+    super()
+
+    this.state = {
+      image: null,
+      author: '',
+      place: '',
+      description: '',
+      hashtags: '',
+    }
   }
 
   handleSubmit = async e => {
-      e.preventDefault()
+    e.preventDefault()
 
-      const data = new FormData()
+    const data = new FormData()
 
-      data.append('image', this.state.image)
-      data.append('author', this.state.author)
-      data.append('place', this.state.place)
-      data.append('description', this.state.description)
-      data.append('hashtags', this.state.hashtags)
-      
-      await api.post('posts', data)
+    data.append('image', this.state.image)
+    data.append('author', this.state.author)
+    data.append('place', this.state.place)
+    data.append('description', this.state.description)
+    data.append('hashtags', this.state.hashtags)
+    
+    await api.post('posts', data)
 
-      this.props.history.push('/')
+    this.props.history.push('/')
   }
 
   handleChange = e => {

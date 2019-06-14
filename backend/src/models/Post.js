@@ -8,11 +8,10 @@ const PostSchema = new mongoose.Schema({
   image: String,
   likes: {
     type: Number,
-    default: 0,
+    default: 0
   }
 }, {
-  timestamps: true,
+  timestamps: true
 })
 
 module.exports = mongoose.model('Post', PostSchema)
-

@@ -9,11 +9,11 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-iaygp.gcp.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true})
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-iaygp.gcp.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true })
 
 app.use((req, res, next) => {
-    req.io = io
-    next()
+  req.io = io
+  next()
 })
 
 app.use(cors())

@@ -34,7 +34,7 @@ export default class Feed extends Component {
   }
 
   registerToSocket = () => {
-    const socket = io('http://localhost:3333')
+    const socket = io('http://192.168.0.101:3333')
 
     socket.on('post', newPost => {
       this.setState({ feed: [newPost, ...this.state.feed]})
@@ -70,7 +70,7 @@ export default class Feed extends Component {
                 <Image source={more} />
               </View>
 
-              <Image style={styles.feedImage} source={{ uri: `http://localhost:3333/files/${item.image}` }} />
+              <Image style={styles.feedImage} source={{ uri: `http://192.168.0.101:3333/files/${item.image}` }} />
 
               <View style={styles.feedItemFooter}>
                 <View style={styles.actions}>
@@ -86,7 +86,7 @@ export default class Feed extends Component {
                 </View>
 
                 <Text style={styles.likes}>{item.likes} curtidas</Text>
-                <Text style={styles.description}>{item.description} {item.description}</Text>
+                <Text style={styles.description}>{item.description}</Text>
                 <Text style={styles.hashtags}>{item.hashtags} </Text>
               </View>
             </View>
